@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        //根据不同的渠道或者版本来设置不同的资源文件
+//        resValue("string", 'app_version', APP_VERSION)
+        //设置同意的调试开关，在jenkins端已经适配
+        buildConfigField "boolean", "ISDEBUG", "false"
+        //根据不同的编译模式指定不同的服务器地址
+        buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
+        //CDN服务器地址
+        buildConfigField 'String', 'API_SERVER_URL_CDN', RELEASE_API_SERVER_URL_CDN
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
+            buildConfigField 'String', 'API_SERVER_URL_CDN', RELEASE_API_SERVER_URL_CDN
+            buildConfigField 'String', 'IM_SERVER_HOST', RELEASE_IM_SERVER_HOST
+            buildConfigField 'int', 'IM_SERVER_PORT', RELEASE_IM_SERVER_PORT
+            buildConfigField "boolean", "ISDEBUG", RELEASE_DEBUG
+        }
+        debug {
+            minifyEnabled false
+            buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
+            buildConfigField 'String', 'API_SERVER_URL_CDN', RELEASE_API_SERVER_URL_CDN
+            buildConfigField 'String', 'IM_SERVER_HOST', RELEASE_IM_SERVER_HOST
+            buildConfigField 'int', 'IM_SERVER_PORT', RELEASE_IM_SERVER_PORT
+            buildConfigField "boolean", "ISDEBUG", RELEASE_DEBUG
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:$rootProject.ext.androidSupportSdkVersion"
+    compile "com.android.support:design:$rootProject.ext.androidSupportSdkVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.androidSupportSdkVersion"
+    compile "com.android.support:support-v4:$rootProject.ext.androidSupportSdkVersion"
+    testCompile 'junit:junit:4.12'
+    //retrofit2.0-start
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit2Version"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofit2Version"
+    //gson转换
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit2Version"
+    //请求日志打印
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.logginginterceptorVersion"
+    //retrofit2.0-end
+    //Rxjava2.0
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
+    //RxAndroid
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
+}

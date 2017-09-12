@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'me.tatarka:gradle-retrolambda:3.5.0'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -27,9 +28,9 @@ ext {
     releaseVersionName = '1.0.0'
 
     androidCompileSdkVersion = 25
-    androidBuildToolsVersion = '25.1.0'
-    androidSupportSdkVersion = '25.1.0'
-    minSdkVersion = 16
+    androidBuildToolsVersion = '25.0.0'
+    androidSupportSdkVersion = '25.0.0'
+    minSdkVersion = 15
     targetSdkVersion = 24
     junitVersion = '4.12'
     rxjava2Version = '2.0.8'
@@ -37,4 +38,5 @@ ext {
     gsonVersion = '2.6.2'
     rxAndroidVersion = '2.0.1'
     logginginterceptorVersion = '3.6.0'
+    butterknifeVersion = '8.4.0'
 }

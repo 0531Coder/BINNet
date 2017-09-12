@@ -1,12 +1,14 @@
 package com.sheyuan.binnet.response;
 
+import com.sheyuan.baselibrary.entity.BasicResponse;
+
 import java.util.List;
 
 /**
  * Created by moutain on 17-9-11.
  */
 
-public class TransportResponse {
+public class TransportResponse extends BasicResponse{
 
     /**
      * message : ok

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Base Library</string>
+    <string name="response_return_error">服务器返回值异常</string>
+    <string name="connect_error">网络连接异常</string>
+    <string name="connect_timeout">网络连接超时</string>
+    <string name="bad_network">网络连接异常</string>
+    <string name="parse_error">数据解析失败</string>
+    <string name="unknown_error">未知错误</string>
 </resources>

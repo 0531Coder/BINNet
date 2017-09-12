@@ -32,7 +32,7 @@ public class RetrofitSingleton {
         initOkhttp();
     }
 
-    public static RetrofitSingleton getInstance() {
+    public static Retrofit getInstance() {
         if (Instance == null) {
             synchronized (RetrofitSingleton.class) {
                 if (Instance == null) {
@@ -41,11 +41,11 @@ public class RetrofitSingleton {
             }
         }
 
-        return Instance;
+        return Instance.retrofit;
     }
 
 
-    public void initOkhttp() {
+    private void initOkhttp() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         //Debug判断
         if (BuildConfig.ISDEBUG) {
@@ -110,11 +110,7 @@ public class RetrofitSingleton {
         builder.readTimeout(20, TimeUnit.SECONDS);
         builder.writeTimeout(20, TimeUnit.SECONDS);
         okHttpClient = builder.build();
-        retrofit = new Retrofit.Builder().baseUrl("").client(okHttpClient).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
-    }
-
-    public Retrofit getRetrofit() {
-        return retrofit;
+        retrofit = new Retrofit.Builder().baseUrl(BuildConfig.API_SERVER_URL).client(okHttpClient).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
     }
 
 }

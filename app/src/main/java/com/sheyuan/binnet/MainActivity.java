@@ -1,6 +1,7 @@
 package com.sheyuan.binnet;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import com.sheyuan.baselibrary.RetrofitSingleton;
 import com.sheyuan.baselibrary.rxpermissions.Permission;
 import com.sheyuan.baselibrary.rxpermissions.RxPermissions;
 import com.sheyuan.baselibrary.utils.helper.RxSchedulers;
+import com.sheyuan.binnet.camera.SimpleActivity;
 import com.sheyuan.binnet.response.TransportResponse;
 import com.sheyuan.binnet.service.LoginService;
 
@@ -47,7 +49,8 @@ public class MainActivity extends BaseRxActivity {
         btn_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, SimpleActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -64,7 +67,7 @@ public class MainActivity extends BaseRxActivity {
                 Manifest.permission.SEND_SMS).subscribe(new Consumer<Permission>() {
             @Override
             public void accept(@NonNull Permission permission) throws Exception {
-               
+
             }
         });
     }

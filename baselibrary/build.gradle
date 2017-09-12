@@ -71,4 +71,8 @@ dependencies {
     //butterknife
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+    //Glide
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    //photoview(可缩放图片浏览器)
+    compile 'com.github.chrisbanes.photoview:library:1.2.4'
 }

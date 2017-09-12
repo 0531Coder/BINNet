@@ -39,4 +39,5 @@ ext {
     rxAndroidVersion = '2.0.1'
     logginginterceptorVersion = '3.6.0'
     butterknifeVersion = '8.4.0'
+    glideVersion = '4.0.0'
 }

@@ -18,8 +18,10 @@
         android:text="请求结果"
         />
     <Button
+        android:layout_below="@+id/tv_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_call"
+        android:text="照片相关"
         />
 </RelativeLayout>

@@ -59,7 +59,7 @@ public class PhotoFragment extends Fragment implements View.OnClickListener,
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null) {
-            rootView = inflater.inflate(R.layout.activity_main, container, false);
+            rootView = inflater.inflate(R.layout.activity_photo, container, false);
         }
         init();
         return rootView;

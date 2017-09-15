@@ -1,8 +1,9 @@
-package com.sheyuan.baselibrary;
+package com.sheyuan.baselibrary.base;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -45,6 +46,7 @@ public abstract class BaseRxActivity extends AppCompatActivity implements BaseIm
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
         if (disposables2Destroy != null) {
             throw new IllegalStateException("onCreate called multiple times");
         }

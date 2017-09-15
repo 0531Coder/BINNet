@@ -1,4 +1,4 @@
-package com.sheyuan.baselibrary.entity;
+package com.sheyuan.baselibrary.base;
 
 /**
  * Created by moutain on 17-9-12 13:07.

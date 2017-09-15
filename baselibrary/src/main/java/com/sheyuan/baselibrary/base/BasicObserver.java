@@ -1,4 +1,4 @@
-package com.sheyuan.baselibrary;
+package com.sheyuan.baselibrary.base;
 
 
 import android.net.ParseException;
@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.google.gson.JsonParseException;
-import com.sheyuan.baselibrary.entity.BasicResponse;
+import com.sheyuan.baselibrary.R;
 import com.sheyuan.baselibrary.utils.ToastUtils;
 
 import org.json.JSONException;
@@ -19,10 +19,10 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import retrofit2.HttpException;
 
-import static com.sheyuan.baselibrary.BasicObserver.ExceptionReason.CONNECT_ERROR;
-import static com.sheyuan.baselibrary.BasicObserver.ExceptionReason.CONNECT_TIMEOUT;
-import static com.sheyuan.baselibrary.BasicObserver.ExceptionReason.PARSE_ERROR;
-import static com.sheyuan.baselibrary.BasicObserver.ExceptionReason.UNKNOWN_ERROR;
+import static com.sheyuan.baselibrary.base.BasicObserver.ExceptionReason.CONNECT_ERROR;
+import static com.sheyuan.baselibrary.base.BasicObserver.ExceptionReason.CONNECT_TIMEOUT;
+import static com.sheyuan.baselibrary.base.BasicObserver.ExceptionReason.PARSE_ERROR;
+import static com.sheyuan.baselibrary.base.BasicObserver.ExceptionReason.UNKNOWN_ERROR;
 
 /**
  * Created by moutain on 17-9-12 13:14.

@@ -1,6 +1,6 @@
 package com.sheyuan.binnet.response;
 
-import com.sheyuan.baselibrary.entity.BasicResponse;
+import com.sheyuan.baselibrary.base.BasicResponse;
 
 import java.util.List;
 

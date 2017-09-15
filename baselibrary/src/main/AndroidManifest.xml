@@ -26,7 +26,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <application android:allowBackup="true" android:label="@string/app_name"
-        android:supportsRtl="true" android:name=".BaseApplication">
+        android:supportsRtl="true" android:name=".base.BaseApplication">
         <provider
             android:name=".picture.PictureFileProvider"
             android:authorities="${applicationId}.provider"

@@ -1,4 +1,4 @@
-package com.sheyuan.baselibrary;
+package com.sheyuan.baselibrary.base;
 
 import io.reactivex.disposables.Disposable;
 
@@ -22,5 +22,7 @@ public interface BaseImpl {
      * 取消ProgressDialog
      */
     void dismissProgress();
+
+    void initTopBar();
 
 }

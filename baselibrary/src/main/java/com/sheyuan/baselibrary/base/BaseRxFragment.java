@@ -1,4 +1,4 @@
-package com.sheyuan.baselibrary;
+package com.sheyuan.baselibrary.base;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

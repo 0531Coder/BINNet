@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.sheyuan.baselibrary.BaseApplication;
+import com.sheyuan.baselibrary.base.BaseApplication;
 import com.sheyuan.baselibrary.BuildConfig;
 
 /**

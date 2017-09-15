@@ -1,21 +1,28 @@
 package com.sheyuan.binnet;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.sheyuan.baselibrary.BaseRxActivity;
-import com.sheyuan.baselibrary.BasicObserver;
-import com.sheyuan.baselibrary.RetrofitSingleton;
+import com.qmuiteam.qmui.widget.QMUITopBar;
+import com.sheyuan.baselibrary.base.BaseRxActivity;
+import com.sheyuan.baselibrary.base.BasicObserver;
+import com.sheyuan.baselibrary.glideutils.CommonImageLoader;
+import com.sheyuan.baselibrary.net.RetrofitSingleton;
 import com.sheyuan.baselibrary.rxpermissions.Permission;
 import com.sheyuan.baselibrary.rxpermissions.RxPermissions;
+import com.sheyuan.baselibrary.utils.ToastUtils;
 import com.sheyuan.baselibrary.utils.helper.RxSchedulers;
 import com.sheyuan.binnet.camera.SimpleActivity;
 import com.sheyuan.binnet.response.TransportResponse;
 import com.sheyuan.binnet.service.LoginService;
+
+import java.lang.ref.WeakReference;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
@@ -26,14 +33,18 @@ public class MainActivity extends BaseRxActivity {
     private TextView tv_result;
     private Button btn_query;
     private Button btn_call;
-
+    private QMUITopBar qmui_topbar;
+    private ImageView img;
+    WeakReference mWeakReference = new WeakReference<Activity>(this);
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final RxPermissions rxPermissions = new RxPermissions(this);
+        img = (ImageView) findViewById(R.id.img);
         btn_call = (Button) findViewById(R.id.btn_call);
         tv_result = (TextView) findViewById(R.id.tv_result);
+        qmui_topbar = (QMUITopBar) findViewById(R.id.qmui_topbar);
         btn_query = (Button) findViewById(R.id.btn_query);
         btn_query.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +79,23 @@ public class MainActivity extends BaseRxActivity {
             @Override
             public void accept(@NonNull Permission permission) throws Exception {
 
+            }
+        });
+        initTopBar();
+        Activity activity = (Activity) mWeakReference.get();
+        CommonImageLoader.getInstance().addGlideRequests(this);
+        CommonImageLoader.getInstance().displayImage(activity.hashCode(),"http://ww3.sinaimg.cn/large/7a8aed7bgw1eswencfur6j20hq0qodhs.jpg",img);
+    }
+
+    @Override
+    public void initTopBar() {
+        qmui_topbar.addLeftBackImageButton();
+        qmui_topbar.setTitle("首页");
+        qmui_topbar.addRightImageButton(R.drawable.ic_launcher,R.id.topbar_right_change_button);
+        findViewById(R.id.topbar_right_change_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtils.show("dianji ");
             }
         });
     }

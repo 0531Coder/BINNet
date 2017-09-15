@@ -1,6 +1,9 @@
-package com.sheyuan.baselibrary;
+package com.sheyuan.baselibrary.net;
 
 import android.text.TextUtils;
+
+import com.sheyuan.baselibrary.BuildConfig;
+import com.sheyuan.baselibrary.base.BaseApplication;
 
 import java.io.File;
 import java.io.IOException;

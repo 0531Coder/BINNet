@@ -1,4 +1,4 @@
-package com.sheyuan.baselibrary;
+package com.sheyuan.baselibrary.base;
 
 import android.app.Application;
 import android.content.Context;

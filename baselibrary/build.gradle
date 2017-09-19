@@ -19,6 +19,10 @@ android {
         buildConfigField 'String', 'API_SERVER_URL_CDN', RELEASE_API_SERVER_URL_CDN
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
     }
     buildTypes {
         release {
@@ -76,4 +80,7 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
     //photoview(可缩放图片浏览器)
     compile 'com.github.chrisbanes.photoview:library:1.2.4'
+    //tencentBugly
+    compile "com.tencent.bugly:crashreport:latest.release"
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
 }

@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 
+import com.tencent.bugly.crashreport.CrashReport;
+
 /**
  * Created by moutain on 17-9-11.
  */
@@ -21,6 +23,7 @@ public class BaseApplication extends Application {
         }else{
             cacheDir = mAppContext.getCacheDir().toString();
         }
+        CrashReport.initCrashReport(getApplicationContext(), "b97529ce83", false);
     }
     //判断内存卡安装状态
     private boolean ExistSDCard(){

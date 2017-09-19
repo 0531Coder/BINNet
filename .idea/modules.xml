@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/BINNet.iml" filepath="$PROJECT_DIR$/BINNet.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hybridlibrary/hybridlibrary.iml" filepath="$PROJECT_DIR$/hybridlibrary/hybridlibrary.iml" />
     </modules>
   </component>
 </project>

@@ -16,11 +16,11 @@ import com.sheyuan.baselibrary.glideutils.CommonImageLoader;
 import com.sheyuan.baselibrary.net.RetrofitSingleton;
 import com.sheyuan.baselibrary.rxpermissions.Permission;
 import com.sheyuan.baselibrary.rxpermissions.RxPermissions;
-import com.sheyuan.baselibrary.utils.ToastUtils;
 import com.sheyuan.baselibrary.utils.helper.RxSchedulers;
 import com.sheyuan.binnet.camera.SimpleActivity;
 import com.sheyuan.binnet.response.TransportResponse;
 import com.sheyuan.binnet.service.LoginService;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.lang.ref.WeakReference;
 
@@ -95,7 +95,7 @@ public class MainActivity extends BaseRxActivity {
         findViewById(R.id.topbar_right_change_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.show("dianji ");
+                CrashReport.testJavaCrash();
             }
         });
     }

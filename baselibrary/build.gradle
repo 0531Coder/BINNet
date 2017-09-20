@@ -83,4 +83,6 @@ dependencies {
     //tencentBugly
     compile "com.tencent.bugly:crashreport:latest.release"
     compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    //gson
+    compile 'com.google.code.gson:gson:2.8.1'
 }

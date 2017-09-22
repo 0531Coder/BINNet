@@ -1,10 +1,15 @@
-apply plugin: 'com.android.library'
-
+if(IS_BUILD_MODULE.toBoolean()){
+    apply plugin: 'com.android.library'
+}else{
+    apply plugin: 'com.android.application'
+}
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
-
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
     defaultConfig {
+        if(!IS_BUILD_MODULE.toBoolean()){
+            applicationId "com.sheyuan.hybridlibrary"
+        }
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -14,7 +19,6 @@ android {
         ndk{
             abiFilters "armeabi","armeabi-v7a","x86","mips"
         }
-
     }
     buildTypes {
         release {
@@ -25,9 +29,16 @@ android {
     //保证libs文件夹下面只有一个armeabi的so文件夹不然在64位cpu手机上会出现问题
     sourceSets{
         main{
+            if (IS_BUILD_MODULE.toBoolean()) {
+                manifest.srcFile 'src/main/buildModule/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/buildApp/AndroidManifest.xml'
+            }
             jniLibs.srcDirs = ['libs']
         }
     }
+    //避免library之间资源重名,所有资源均用module名字开头
+    resourcePrefix 'hybrid_'
 }
 
 dependencies {

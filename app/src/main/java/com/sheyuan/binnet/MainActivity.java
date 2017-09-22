@@ -36,11 +36,22 @@ public class MainActivity extends BaseRxActivity {
     private QMUITopBar qmui_topbar;
     private ImageView img;
     WeakReference mWeakReference = new WeakReference<Activity>(this);
+    private Button btn_startService;
+    private Button btn_stopService;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final RxPermissions rxPermissions = new RxPermissions(this);
+        btn_startService = (Button) findViewById(R.id.btn_startService);
+        btn_stopService = (Button) findViewById(R.id.btn_stopService);
+        btn_startService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(this,);
+            }
+        });
         img = (ImageView) findViewById(R.id.img);
         btn_call = (Button) findViewById(R.id.btn_call);
         tv_result = (TextView) findViewById(R.id.tv_result);

@@ -22,7 +22,4 @@ public interface BaseImpl {
      * 取消ProgressDialog
      */
     void dismissProgress();
-
-    void initTopBar();
-
 }

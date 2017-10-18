@@ -58,7 +58,7 @@ public class RetrofitSingleton {
             builder.addInterceptor(loggingInterceptor);
         }
 // 缓存 http://www.jianshu.com/p/93153b34310e
-        File cacheFile = new File(BaseApplication.cacheDir, "/NetCache");
+        File cacheFile = new File(BaseApplication.getAppContext().getCacheDir(), "/NetCache");
         Cache cache = new Cache(cacheFile, 1024 * 1024 * 50);
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();

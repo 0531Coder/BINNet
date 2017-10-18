@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 import com.sheyuan.baselibrary.base.BaseRxActivity;
 import com.sheyuan.baselibrary.base.BasicObserver;
-import com.sheyuan.baselibrary.glideutils.CommonImageLoader;
 import com.sheyuan.baselibrary.net.RetrofitSingleton;
 import com.sheyuan.baselibrary.rxpermissions.Permission;
 import com.sheyuan.baselibrary.rxpermissions.RxPermissions;
@@ -93,12 +92,11 @@ public class MainActivity extends BaseRxActivity {
             }
         });
         initTopBar();
-        Activity activity = (Activity) mWeakReference.get();
-        CommonImageLoader.getInstance().addGlideRequests(this);
-        CommonImageLoader.getInstance().displayImage(activity.hashCode(),"http://ww3.sinaimg.cn/large/7a8aed7bgw1eswencfur6j20hq0qodhs.jpg",img);
+//        Activity activity = (Activity) mWeakReference.get();
+//        CommonImageLoader.getInstance().addGlideRequests(this);
+//        CommonImageLoader.getInstance().displayImage(activity.hashCode(),"http://ww3.sinaimg.cn/large/7a8aed7bgw1eswencfur6j20hq0qodhs.jpg",img);
     }
 
-    @Override
     public void initTopBar() {
         qmui_topbar.addLeftBackImageButton();
         qmui_topbar.setTitle("首页");

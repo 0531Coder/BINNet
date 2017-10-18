@@ -5,25 +5,9 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_startservice"
+        android:id="@+id/btn_toPage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="开始服务" />
-
-    <Button
-        android:text="停止服务"
-        android:id="@+id/btn_stopservice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="绑定服务"
-        android:id="@+id/btn_bindservice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:text="解绑服务"
-        android:id="@+id/btn_unbindservice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:text="跳转至h5页面" />
 
 </LinearLayout>

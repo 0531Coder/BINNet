@@ -2,9 +2,9 @@ package com.sheyuan.hybridlibrary.ui;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 
+import com.sheyuan.baselibrary.base.BaseRxActivity;
 import com.sheyuan.hybridlibrary.R;
 import com.sheyuan.hybridlibrary.core.HybridConfig;
 import com.sheyuan.hybridlibrary.core.HybridConstant;
@@ -17,9 +17,9 @@ import com.tencent.smtt.sdk.WebView;
  * Created by moutain on 17-9-20 12:27.
  */
 
-public class HybridBaseActivity extends AppCompatActivity {
+public class HybridBaseActivity extends BaseRxActivity {
 
-    private WebView webview;
+    protected WebView webview;
     private HybridWebViewClient mHybridWebViewClient;
 
     @Override
@@ -33,7 +33,7 @@ public class HybridBaseActivity extends AppCompatActivity {
         }
     }
 
-    private void loadUrl(String url) {
+    public void loadUrl(String url) {
         if (TextUtils.isEmpty(url)) return;
         mHybridWebViewClient.setHostFilter(Uri.parse(url).getHost());
         webview.loadUrl(url);
@@ -84,7 +84,7 @@ public class HybridBaseActivity extends AppCompatActivity {
     }
 
 
-    private String getUrl() {
+    public String getUrl() {
         Uri data = getIntent().getData();
         String url = null;
         if (null == data) {

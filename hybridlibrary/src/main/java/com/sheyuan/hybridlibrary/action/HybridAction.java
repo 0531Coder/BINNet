@@ -20,5 +20,12 @@ public abstract class HybridAction {
     }
 
     //统一处理调用原生接口的请求
+
+    /**
+     *
+     * @param webView   处理这个Action的webview
+     * @param params    与原生交互携带的参数
+     * @param jsmethod  原生与前端交互所执行的回调方法
+     */
     public abstract void onAction(WebView webView, String params, String jsmethod);
 }

@@ -9,16 +9,16 @@
         android:roundIcon="@drawable/hybrid_ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/hybrid_AppTheme">
-        <activity android:name=".ui.HybridTestActivity">
+
+        <activity android:name=".ui.HybridBaseActivity" />
+        <activity android:name=".ui.HybridSampleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".ui.HybridBaseActivity" />
-        <service android:name=".service.ImgService" />
+            </activity>
+        <activity android:name=".ui.HybridWebViewActivity"/>
     </application>
 
 </manifest>

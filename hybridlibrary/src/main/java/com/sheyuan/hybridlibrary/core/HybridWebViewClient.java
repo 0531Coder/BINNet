@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.sheyuan.baselibrary.glideutils.CommonImageLoader;
 import com.sheyuan.hybridlibrary.action.HybridAction;
@@ -20,7 +19,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static com.sheyuan.hybridlibrary.service.ImgService.TAG;
+
 
 /**
  * Created by moutain on 17-9-20 15:46.
@@ -153,7 +152,7 @@ public class HybridWebViewClient extends WebViewClient {
                 return super.shouldOverrideUrlLoading(webView, url);
             }
             // TODO: 17-9-21 log统一管理
-            Log.e(TAG, "shouldOverrideUrlLoading: " + "host==" + host + "param==" + param);
+//            Log.e(TAG, "shouldOverrideUrlLoading: " + "host==" + host + "param==" + param);
             try {
                 hybridDispatcher(host, param, callback);
             } catch (IllegalAccessException e) {

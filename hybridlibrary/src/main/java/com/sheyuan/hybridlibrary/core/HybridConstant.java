@@ -27,9 +27,4 @@ public interface HybridConstant {
     String KV_GET = "get";
     String KV_PUT = "put";
     String KV_CLEAR = "clear";
-    //导航窗口样式：搜索头部导航,常规的头部导航,双tab切换的头部导航
-    String HEADER_SEARCH = "search";
-    String HEADER_NORMAL = "normal";
-    String HEADER_TAB = "tabtitle";
-
 }

@@ -16,4 +16,6 @@ public interface HybridConfig {
     String GET_CALLBACK = "callback";
     String HYBRID_VERSION = "1.0.0";
     String JSInterface = "HybridJSInterface";
+    //前端文件的存放地址
+    String FILE_HYBRID_DATA_PATH = "webapp";
 }

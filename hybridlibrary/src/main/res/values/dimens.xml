@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hybrid_navgation_icon_size">20dp</dimen>
+    <dimen name="hybrid_topbar_height">48dp</dimen>
+    <dimen name="hybrid_topbar_backicon_width">12dp</dimen>
+    <dimen name="hybrid_topbar_backicon_height">20dp</dimen>
+    <dimen name="hybrid_topbar_paddingleft">10dp</dimen>
+    <dimen name="hybrid_topbar_textpaddingleft">2dp</dimen>
+</resources>

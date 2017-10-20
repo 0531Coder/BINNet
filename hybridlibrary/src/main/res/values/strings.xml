@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hybrid Library</string>
+    <string name="hybrid_topbar_back_text">返回</string>
 </resources>

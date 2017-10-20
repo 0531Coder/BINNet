@@ -6,17 +6,16 @@
     android:background="#ff0000"
     android:fitsSystemWindows="true">
 
-    <com.qmuiteam.qmui.widget.QMUITopBar
-        android:id="@+id/qmui_topbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/qmui_topbar_height"
-        app:qmui_topbar_bg_color="#ff0000" />
+    <!--<com.qmuiteam.qmui.widget.QMUITopBar-->
+        <!--android:id="@+id/qmui_topbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/qmui_topbar_height"-->
+        <!--app:qmui_topbar_bg_color="#ff0000" />-->
 
     <Button
         android:id="@+id/btn_query"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/qmui_topbar"
         android:onClick="query"
         android:text="开始请求" />
 
@@ -37,8 +36,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/btn_call"
-        android:background="@color/qmui_config_color_white">
+        android:layout_below="@+id/btn_call">
 
         <ImageView
             android:id="@+id/img"

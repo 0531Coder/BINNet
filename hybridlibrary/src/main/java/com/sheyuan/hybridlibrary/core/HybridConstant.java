@@ -27,4 +27,8 @@ public interface HybridConstant {
     String KV_GET = "get";
     String KV_PUT = "put";
     String KV_CLEAR = "clear";
+    //header的展示形式 标签切换/搜索框/普通（包含左中右三个区域的内容）
+    String HEAD_TAB = "tab";
+    String HEAD_SEARCH = "search";
+    String HEAD_NORMAL = "normal";
 }

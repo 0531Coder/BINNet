@@ -3,10 +3,8 @@ package com.sheyuan.hybridlibrary.ui;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.ProgressBar;
 
-import com.qmuiteam.qmui.widget.QMUITopBar;
 import com.sheyuan.baselibrary.rxbus2.RxBus;
 import com.sheyuan.baselibrary.rxbus2.Subscribe;
 import com.sheyuan.baselibrary.rxbus2.ThreadMode;
@@ -25,6 +23,7 @@ import com.sheyuan.hybridlibrary.param.HybridParamShowLoading;
 import com.sheyuan.hybridlibrary.param.HybridParamSign;
 import com.sheyuan.hybridlibrary.param.HybridParamUpdateHeader;
 import com.sheyuan.hybridlibrary.param.HybridParamUserInfo;
+import com.sheyuan.hybridlibrary.widget.NavgationView;
 import com.tencent.smtt.sdk.ValueCallback;
 
 /**
@@ -32,22 +31,28 @@ import com.tencent.smtt.sdk.ValueCallback;
  */
 
 public class HybridWebViewActivity extends HybridBaseActivity {
-
-    private QMUITopBar qmuiTopBar;
     private ProgressBar pb_webview;
+    private NavgationView hybrid_navgation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        qmuiTopBar = (QMUITopBar) findViewById(R.id.qmui_topbar);
+        setContentView(R.layout.hybrid_webview_activity);
+        hybrid_navgation = (NavgationView) findViewById(R.id.hybrid_navgation);
         pb_webview = (ProgressBar) findViewById(R.id.pb_webview);
+//        QMUIStatusBarHelper.setStatusBarLightMode(this);
         //当前页面是否需要显示导航栏
         boolean hasNavgation = getIntent().getBooleanExtra(HybridConstant.INTENT_EXTRA_KEY_HASNAVGATION, true);
         if (hasNavgation) {
-            // TODO: 17-10-12 将qmui导航栏按要求配置
-
+//            qmuiTopBar.addLeftBackImageButton().setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    onBackPressed();
+//                }
+//            });
+//            qmuiTopBar.setVisibility(View.VISIBLE);
         } else {
-            qmuiTopBar.setVisibility(View.GONE);
+//            qmuiTopBar.setVisibility(View.GONE);
         }
         //如果获取到的url不为空,就加载这个url
         if (!TextUtils.isEmpty(getUrl())) {

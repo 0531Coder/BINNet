@@ -3,8 +3,6 @@ package com.sheyuan.baselibrary.base;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
-import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -12,7 +10,7 @@ import io.reactivex.disposables.Disposable;
 public abstract class BaseRxActivity extends AppCompatActivity implements BaseImpl {
     private CompositeDisposable disposables2Stop;// 管理Stop取消订阅者者
     private CompositeDisposable disposables2Destroy;// 管理Destroy取消订阅者者
-    private QMUITipDialog mQMUITipDialog;
+//    private QMUITipDialog mQMUITipDialog;
 
     public boolean addRxStop(Disposable disposable) {
         if (disposables2Stop == null) {
@@ -46,7 +44,7 @@ public abstract class BaseRxActivity extends AppCompatActivity implements BaseIm
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
+//        QMUIStatusBarHelper.translucent(this); // 沉浸式状态栏
         if (disposables2Destroy != null) {
             throw new IllegalStateException("onCreate called multiple times");
         }
@@ -85,25 +83,25 @@ public abstract class BaseRxActivity extends AppCompatActivity implements BaseIm
      * 显示ProgressDialog
      */
     public void showProgress(String msg) {
-        if (mQMUITipDialog == null) {
-            mQMUITipDialog = new QMUITipDialog.Builder(BaseRxActivity.this)
-                    .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
-                    .setTipWord(msg)
-                    .create();
-        }
-
-        if (!mQMUITipDialog.isShowing()) {
-            mQMUITipDialog.show();
-        }
+//        if (mQMUITipDialog == null) {
+//            mQMUITipDialog = new QMUITipDialog.Builder(BaseRxActivity.this)
+//                    .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
+//                    .setTipWord(msg)
+//                    .create();
+//        }
+//
+//        if (!mQMUITipDialog.isShowing()) {
+//            mQMUITipDialog.show();
+//        }
     }
 
     /**
      * 取消ProgressDialog
      */
     public void dismissProgress() {
-        if (mQMUITipDialog != null) {
-            mQMUITipDialog.dismiss();
-        }
+//        if (mQMUITipDialog != null) {
+//            mQMUITipDialog.dismiss();
+//        }
     }
 
 }

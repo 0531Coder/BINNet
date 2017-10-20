@@ -3,17 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
-
     <com.sheyuan.hybridlibrary.widget.NavgationView
-        android:id="@+id/qmui_topbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/qmui_topbar_height" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hybrid_navigation"
+        />
+    <!--<com.qmuiteam.qmui.widget.QMUITopBar-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/qmui_topbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/qmui_topbar_height"/>-->
 
     <com.tencent.smtt.sdk.WebView
         android:id="@+id/x5_webview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/qmui_topbar" />
+        android:layout_height="match_parent"/>
 
     <ProgressBar
         android:id="@+id/pb_webview"

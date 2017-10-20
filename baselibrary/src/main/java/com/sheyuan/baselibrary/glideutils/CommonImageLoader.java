@@ -22,7 +22,6 @@ import java.util.concurrent.ExecutionException;
 /**
  * Created by developerHaoz on 2017/6/23.
  */
-
 public class CommonImageLoader {
 
     /**
